@@ -604,16 +604,16 @@ namespace OpenPOS.CCO116Interop
 
         #region OPOSIndividualRecognition  Specific Properties
 
-        public IndiVidualIdName[] CapIndividualList
+        public IndividualIdName[] CapIndividualList
         {
             get
             {
                 string[] individuals = _cco.CapIndividualList.Split(new[] { ',' });
-                List<IndiVidualIdName> result = new List<IndiVidualIdName>();
+                List<IndividualIdName> result = new List<IndividualIdName>();
                 foreach (var item in individuals)
                 {
                     string[] entry = item.Split(new[] { ':' });
-                    result.Add(new IndiVidualIdName(entry[0], entry[1]));
+                    result.Add(new IndividualIdName(entry[0], entry[1]));
                 }
                 return result.ToArray();
             }
